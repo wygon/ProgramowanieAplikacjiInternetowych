@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="number" name="l1" placeholder="Podaj pierwsza liczbe">
+        <input type="number" name="l2" placeholder="Podaj druga liczbe">
+        <input type="string" name="nr" placeholder="+ - / *">
+        <input type="submit" value="Oblicz">
+    </form>
+    <div class="wynik">
+
+    </div>
+    <script>
+        const formularz = document.querySelector('form');
+        const wynik = document.querySelector('div.wynik');
+        formularz.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const liczba1 = document.querySelector('input[name="l1"]').value*1;
+        const liczba2 = document.querySelector('input[name="l2"]').value*1;
+        const nr = document.querySelector('input[name="nr"]');
+        const dodawanie="+";
+        const odejmowanie="-";
+        const dzielenie="/";
+        const mnozenie="*";
+       // document.writeln(`Znak:  ${nr}`)
+        if(nr==dodawanie)
+        {
+            const suma = liczba1 + liczba2;
+            wynik.textContent = `Wynik dodawania tych liczb to: ${suma}`;
+        }
+        else if(nr==odejmowanie)
+        {
+            const suma = liczba1 - liczba2;
+            wynik.textContent = `Wynik odejmowania tych liczb to: ${suma}`;
+        }
+        else if(nr==dzielenie)
+        {
+            const suma = liczba1 / liczba2;
+            wynik.textContent = `Wynik dzielenia tych liczb to: ${suma}`;
+        }
+        else if(nr==mnozenie)
+        {
+            const suma = liczba1 * liczba2;
+            wynik.textContent = `Wynik mnożenia tych liczb to: ${suma}`;
+        }
+        else
+            wynik.textContent = "Blad";  
+        })
+</script>
+</body>
+</html>

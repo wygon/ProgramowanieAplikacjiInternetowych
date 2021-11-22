@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+            <input type="number" name="numer1"/>
+            <input type="number" name="numer2"/>
+            <input type="submit" value="Pokaz liczby"/>
+
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const div = document.querySelector('div.wynik');
+
+        formularz.addEventListener('submit', function (e){
+            e.preventDefault();
+            const poczatek = document.querySelector('input[name="numer1"]').value*1;
+            const koniec = document.querySelector('input[name="numer2"]').value*1;
+
+            for(let i = poczatek; i < koniec; i++)
+            {
+                if(i % 5 == 0) div.textContent += i + " ";
+            }
+        });
+    </script>  
+
+</body>
+</html>

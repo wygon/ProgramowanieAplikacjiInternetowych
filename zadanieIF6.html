@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="number" name="l1" placeholder="Podaj pierwsza liczbe">
+        <input type="number" name="l2" placeholder="Podaj druga liczbe">
+        <input type="submit" value="Oblicz">
+    </form>
+    <div class="wynik">
+        
+    </div>
+    <script>
+        //pobieramy/odwlolujemy sie do formularza(tworzymy zmienna, ktora przechowuje zobiekt formularza)
+        const formularz = document.querySelector('form');
+        //pobieramy diva o klasiue wynik
+        const wynik = document.querySelector('div.wynik');
+        formularz.addEventListener('submit',(e)=>{
+        //zatrzymujemy domyslną akcję formularza
+        e.preventDefault();
+        //pobieramy wartosc pola liczba1 i liczba2
+        const liczba1 = document.querySelector('input[name="l1"]').value*1;
+        const liczba2 = document.querySelector('input[name="l2"]').value*1;
+        //tworzmy wartosc ktora bedzie miala wartosc sumy liczb z formlrza
+        const suma = liczba1/liczba2;
+        //skutek.textContent = 'Suma wynosi: ' + suma;
+        //skutek.textContent = `Suma liczb ${liczba1} i ${liczba2} wynosi: ${suma}`;
+        if(liczba1%liczba2 == 0)
+        wynik.textContent = `Wynik dzielenia ${liczba1} przez ${liczba2} to: ${suma}`;
+        else
+        wynik.textContent = `Liczba ${liczba1} nie dzieli sie przez ${liczba2}`;
+        })
+    </script>
+</body>
+</html>
