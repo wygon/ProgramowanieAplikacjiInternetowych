@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="przerwa"></div>
+    <script>
+        const wysokosc = prompt('Podaj wysokosc:')*1;
+        const szerokosc = prompt('Podaj szerokosc: ')*1;
+        for(let i=0; i<szerokosc; i++)
+        {
+        document.write('* ');
+        }
+      //  div;
+      document.write('<br>');
+        for(let j=0; j<wysokosc; j++)
+        {
+            document.write('*');
+            for(let h=0; h<(szerokosc-2); h++)
+            {
+                document.write("&nbsp;&nbsp;&nbsp;");
+            }
+            document.write('*');
+            document.write('<br>');
+        }
+        for(let k=0; k<szerokosc; k++)
+        {
+        document.write('* ');
+        }
+    </script>
+</body>
+</html>
