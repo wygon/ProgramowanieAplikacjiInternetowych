@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="w" placeholder="dodac 1|odjac 2|mnożyć 3|dzielić 4">
+        <input type="number" name="l1" placeholder="Pierwsza liczba">
+        <input type="number" name="l2" placeholder="Druga liczba">
+        <input type="submit" value="Wykonaj">
+    </form>
+
+    <div class = "wynik">
+    </div>
+    <script>
+        const formularz = document.querySelector('form');
+        const skutek = document.querySelector('.wynik');
+        const wydarzenie = document.querySelector('w');
+        
+        const dodawanie = function(e,f){
+            return e+f;
+        }
+        const odejmowanie = function(e,f){
+            return e-f;
+        }
+        const mnozenie = function(e,f){
+            return e*f;
+        }
+        const dzielenie = function(e,f){
+            return e/f;
+        }
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const liczba1 = document.querySelector('input[name="l1"]').value * 1;
+            const liczba2 = document.querySelector('input[name="l2"]').value * 1;
+        switch(wydarzenie)
+        {
+            case 1:
+            skutek.textContent = dodawanie(l1,l2);
+            break;
+            case 2:
+            skutek.textContent = odejmowanie(l1,l2);
+            break;
+            case 3:
+            skutek.textContent = mnozenie(l1,l2);
+            break;
+            case 4:
+            skutek.textContent = dzielenie(l1,l2);
+            break;
+            default:
+            skutek.textContent = 'Blad podaj liczby ponownie';
+            break;
+        }
+        });
+
+    </script>
+</body>
+</html>
