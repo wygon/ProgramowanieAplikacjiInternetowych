@@ -32,3 +32,62 @@ console.log(komorka.wyswietlKontakt());
 </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        .naglowek{
+            background-color: green;
+        }
+        .diw{
+            background-color: yellow;
+        }
+        .akapit1{
+            background-color: red;
+        }
+        .akapit2{
+            background-color: blue;
+            }
+        .zmiana{
+            font-size: 30px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1 class="naglowek">OLGA ROBI KOTY</h1>
+<div class="diw">JACEK PLACEK</div>
+<p class="akapit1">TOUDI MOULI</p>    
+<p class="akapit2">MACIEK PEJA</p>
+<script>
+const p1 = document.querySelector('p.akapit1');
+/*//pobieramy akapit1
+
+//dodajemy nowa tresc do akapitu1
+p1.innerHTML += ' Robert mowi: kochac disa uwielbiam go';
+const gora = document.querySelector('h1.naglowek');
+gora.textContent = 'Olga biega za kwiatkami';
+*/
+const divW = document.querySelector('div.diw');
+divW.style.fontFamily = 'Courier new';
+//divW.style.backgroundColor = 'orange';
+divW.classList.add('zmiana');
+//tworzymy nowy element h2
+const nowyNaglowek = document.createElement('h2')
+//doddajemy tresc do naglowka
+nowyNaglowek.textContent = 'Pies artura jest fajny';
+//dodajemy na strone utworzony naglowek
+document.querySelector('p.akapit2').appendChild(nowyNaglowek);
+//usuwamy akapit1
+//p1.remove();
+</script>
+</body>
+</html>
