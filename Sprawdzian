@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial;
+
+        }
+        .tekstcss {
+            color : black;
+        }
+        .tlocss{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+         <div>Zaproszenie na urodziny 
+            <input type="radio" value="1" name="kartka" /> <br>
+            Zaproszenie na chrzciny
+            <input type="radio" value="2" name="kartka" /><br>
+            Zaproszenie na impreze
+            <input type="radio" value="3" name="kartka" /><br>
+        </div> 
+        <br><br>
+        <div>
+        Wpisz imie osoby zapraszanej: 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="imie" /> <br>
+        Wpisz nazwisko osoby zapraszanej:
+        <input type="text" name="nazwisko" />
+        </div>
+        <br><br>
+        <div>
+            Tresc zaproszenia:
+            <input type="text" name="tresc" size="50" />
+        </div>
+        <br><br>
+        <div>Wybierz kolor tekstu: <br>
+            Czerwony 
+            <input type="radio" value="1" name="kolortekstu" /> <br>
+            Zielony
+            <input type="radio" value="2" name="kolortekstu" /><br>
+            Czarny
+            <input type="radio" value="3" name="kolortekstu" /><br>
+        </div> 
+        <br><br>
+        <div>Wybierz kolor tła: <br>
+            Niebieski
+            <input type="radio" value="1" name="kolortla" /> <br>
+            Zolty
+            <input type="radio" value="2" name="kolortla" /><br>
+            Bialy
+            <input type="radio" value="3" name="kolortla" /><br>
+        </div> 
+        <br><br>
+        <div>Wybierz czcionke: <br>
+            Arial
+            <input type="radio" value="1" name="font" /> <br>
+            Serif
+            <input type="radio" value="2" name="font" /><br>
+            Helvetica
+            <input type="radio" value="3" name="font" /><br>
+        </div> 
+        <br><br>
+        <input type="submit" value="Gotowe!" />
+    </form>
+    <div class="kartkaFinalna">
+    </div>
+    <script>
+        //1 urodzinowa, 2 chrzest, 3 impreza.
+            const formularz = document.querySelector('form');
+            const kartkaKoniec = document.querySelector('div.kartkaFinalna');
+            const imie1 = document.querySelector('input[name="imie"]');
+                const nazwisko1 = document.querySelector('input[name="nazwisko"]');
+                const tresc1 = document.querySelector('input[name="tresc"]');
+                const kartka = document.querySelector('input[name="kartka"]').value * 1;
+                const kolorTekstu = document.querySelector('input[name="kolortekstu"]').value * 1;
+                const kolorTla = document.querySelector('input[name="kolortla"]').value * 1;
+                const font = document.querySelector('input[name="font"]').value * 1;
+
+            formularz.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const imie = imie1.value;
+                const nazwisko = nazwisko1.value;
+                const tresc = tresc1.value; 
+                if(kolorTekstu == 1) kartkaKoniec.style.color = 'red';
+                if(kolorTekstu == 2) kartkaKoniec.style.color = 'green';
+                if(kolorTekstu == 3) kartkaKoniec.style.color = 'black';
+                kartkaKoniec.classList.add('tekstcss');
+                if(kolorTla == 1) kartkaKoniec.style.background = 'blue';
+                if(kolorTla == 2) kartkaKoniec.style.background = 'yellow';
+                if(kolorTla == 3) kartkaKoniec.style.background = 'white';
+                kartkaKoniec.classList.add('tlocss');
+                kartkaKoniec.innerHTML = `<h2>${imie} ${nazwisko}</h2> <p>${tresc}</p>`;
+            }
+
+        </script>
+</body>
+</html>
